@@ -1,0 +1,165 @@
+﻿@page
+@model UVASurplus.Pages.Requests.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Request</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Request.RequesterName" class="control-label"></label>
+                <input asp-for="Request.RequesterName" class="form-control" />
+                <span asp-validation-for="Request.RequesterName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.ComputingID" class="control-label"></label>
+                <input asp-for="Request.ComputingID" class="form-control" />
+                <span asp-validation-for="Request.ComputingID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.RequesterEmail" class="control-label"></label>
+                <input asp-for="Request.RequesterEmail" class="form-control" />
+                <span asp-validation-for="Request.RequesterEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.RequesterDepartment" class="control-label"></label>
+                <input asp-for="Request.RequesterDepartment" class="form-control" />
+                <span asp-validation-for="Request.RequesterDepartment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.RequesterPhoneNumber" class="control-label"></label>
+                <input asp-for="Request.RequesterPhoneNumber" class="form-control" />
+                <span asp-validation-for="Request.RequesterPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.RequesterBuilding" class="control-label"></label>
+                <input asp-for="Request.RequesterBuilding" class="form-control" />
+                <span asp-validation-for="Request.RequesterBuilding" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.RequesterRoom" class="control-label"></label>
+                <input asp-for="Request.RequesterRoom" class="form-control" />
+                <span asp-validation-for="Request.RequesterRoom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.DesiredDate" class="control-label"></label>
+                <input asp-for="Request.DesiredDate" class="form-control" />
+                <span asp-validation-for="Request.DesiredDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.AdditionalComments" class="control-label"></label>
+                <input asp-for="Request.AdditionalComments" class="form-control" />
+                <span asp-validation-for="Request.AdditionalComments" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Request.NeedPickup" /> @Html.DisplayNameFor(model => model.Request.NeedPickup)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.OProject" class="control-label"></label>
+                <input asp-for="Request.OProject" class="form-control" />
+                <span asp-validation-for="Request.OProject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.OTask" class="control-label"></label>
+                <input asp-for="Request.OTask" class="form-control" />
+                <span asp-validation-for="Request.OTask" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.OAward" class="control-label"></label>
+                <input asp-for="Request.OAward" class="form-control" />
+                <span asp-validation-for="Request.OAward" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.OOrg" class="control-label"></label>
+                <input asp-for="Request.OOrg" class="form-control" />
+                <span asp-validation-for="Request.OOrg" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Request.TaggedAssets" /> @Html.DisplayNameFor(model => model.Request.TaggedAssets)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Request.HealthFunds" /> @Html.DisplayNameFor(model => model.Request.HealthFunds)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.RequestDate" class="control-label"></label>
+                <input asp-for="Request.RequestDate" class="form-control" />
+                <span asp-validation-for="Request.RequestDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Request.AdditionalReviewer" /> @Html.DisplayNameFor(model => model.Request.AdditionalReviewer)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Request.AdditionalReviewerCompID" class="control-label"></label>
+                <input asp-for="Request.AdditionalReviewerCompID" class="form-control" />
+                <span asp-validation-for="Request.AdditionalReviewerCompID" class="text-danger"></span>
+            </div>
+
+
+
+            @*<fieldset name="Items[]">
+
+
+
+                @for (var i = 0; i < 5; i++)
+                {
+                    <div class="form-group">
+                        <label asp-for="Request.Items[@i].ItemType" class="control-label"></label>
+                        <input asp-for="Request.Items[@i].ItemType" class="form-control" />
+                        <span asp-validation-for="Request.Items[@i].ItemType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Request.Items[@i].ItemDescription" class="control-label"></label>
+                        <input asp-for="Request.Items[@i].ItemDescription" class="form-control" />
+                        <span asp-validation-for="Request.Items[@i].ItemDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Request.Items[@i].Quantity" class="control-label"></label>
+                        <input asp-for="Request.Items[@i].Quantity" class="form-control" />
+                        <span asp-validation-for="Request.Items[@i].Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Request.Items[@i].Condition" class="control-label"></label>
+                        <input asp-for="Request.Items[@i].Condition" class="form-control" />
+                        <span asp-validation-for="Request.Items[@i].Condition" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Request.Items[@i].Comments" class="control-label"></label>
+                        <input asp-for="Request.Items[@i].Comments" class="form-control" />
+                        <span asp-validation-for="Request.Items[@i].Comments" class="text-danger"></span>
+                    </div>
+
+                }
+                <button id="add-btn">Add Another Item</button>
+            </fieldset>*@
+
+
+            <div class="form-group">
+                <input type="submit" value="Add Items" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
